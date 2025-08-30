@@ -11,7 +11,7 @@ const ParentContainer = () => {
   const { data, loading, error } = useAppSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch(fetchPosts()) ;
   }, [dispatch]);
 
   return (
