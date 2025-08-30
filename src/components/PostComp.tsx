@@ -1,14 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 const PostComp = () => {
-  useEffect(() => {
-    console.log("hello time 12");
-  }, []);
-  useEffect(() => {
-    console.log("hello time 22");
+  const [count, setCount] = useState(20);
+
+  useLayoutEffect(() => {
+    console.log("🚀 Component mounted");
+    setCount((prev) => prev + 100);
+    console.log("🚀 Component mounted", count);
   }, []);
 
-  return <div>Post</div>;
+  useEffect(() => {
+    console.log("🔄 Count changed:", count);
+  }, [count]);
+
+  useEffect(() => {
+    console.log("✨ I run after every render");
+  });
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
 };
 
 export default PostComp;
