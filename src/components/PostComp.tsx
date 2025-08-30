@@ -7,7 +7,7 @@ const PostComp = () => {
 
   return (
     <div>
-      <h2>Post from Shivam Branch</h2>
+      <h2>Post from Shivam Branch code from "PostComp.tsx" new branch</h2>
     </div>
   );
 };
