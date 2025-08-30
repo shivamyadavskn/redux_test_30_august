@@ -26,7 +26,7 @@ const ParentContainer = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
         kjhxkjchzkj
-        {data.map((post: Post) => (
+        {data.map((post: any) => (
           <li key={post.id}>
             <strong>{post.title}</strong>: {post.body}
           </li>
